@@ -20,7 +20,7 @@
         <input v-model="length" />
       </div>
 
-      <button @click="generate"> Generate </button>
+      <button :class="buttonClass ? buttonClass : 'vbg-button'" @click="generate"> {{buttonText ? buttonText : 'Generate'}} </button>
     </div>
 </template>
 
@@ -37,7 +37,9 @@ export default {
   },
   props: {
     inputs: Array,
-    barcodes: Array
+    barcodes: Array,
+    buttonText: String,
+    buttonClass: String
   },
   methods:{
     generate: function(){
@@ -75,7 +77,7 @@ label{
   margin: .5rem;
 }
 
-button{
+.vbg-button{
   padding: .5rem;
   background-color: green;
   color: white;

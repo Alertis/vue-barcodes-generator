@@ -1,10 +1,25 @@
 <template>
     <span v-if="data.length > 0">
         <svg class="barcode" v-for="(b,i) in data" :key="i"
-            jsbarcode-format="auto"
+            :jsbarcode-format="config.format ? config.format : 'auto'"
             :jsbarcode-value="b"
-            :jsbarcode-fontsize="15"
-            jsbarcode-fontoptions="bold"></svg>
+            :jsbarcode-fontsize="config.fontSize"
+            :jsbarcode-fontoptions="config.fontOption"
+            :jsbarcode-width="config.width"
+            :jsbarcode-height="config.height"
+            :jsbarcode-displayvalue="config.displayValue"
+            :jsbarcode-text="config.text"
+            :jsbarcode-font="config.font"
+            :jsbarcode-textalign="config.textAlign"
+            :jsbarcode-textposition="config.textPosition"
+            :jsbarcode-textmargin="config.textMargin"
+            :jsbarcode-background="config.background"
+            :jsbarcode-linecolor="config.lineColor"
+            :jsbarcode-margin="config.margin"
+            :jsbarcode-margintop="config.marginTop"
+            :jsbarcode-marginleft="config.marginLeft"
+            :jsbarcode-marginbottom="config.marginBottom"
+            :jsbarcode-marginright="config.marginRight" ></svg>
     </span>
 </template>
 
@@ -22,7 +37,8 @@ export default {
     }
   },
   props: {
-    data: Array
+    data: Array,
+    config: Object
   },
 }
 </script>
