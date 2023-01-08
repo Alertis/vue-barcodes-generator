@@ -4,22 +4,6 @@
         <label> {{ i.title }}</label>
         <input v-model="i.val" />
       </div>
-
-      <div class="input" > 
-        <label> Start Number </label>
-        <input v-model="start" />
-      </div>
-
-      <div class="input" > 
-        <label> Count </label>
-        <input v-model="count" />
-      </div>
-
-      <div class="input" > 
-        <label> Length </label>
-        <input v-model="length" />
-      </div>
-
       <button :class="buttonClass ? buttonClass : 'vbg-button'" @click="generate"> {{buttonText ? buttonText : 'Generate'}} </button>
     </div>
 </template>
@@ -28,12 +12,19 @@
 
 export default {
   name: 'Form',
-  data: function(){
-    return{
-      count: 0,
-      length: 0,
-      start: 0
-    }
+  mounted: function(){
+      let start = this.inputs.find( e => e.name == 'start')
+      let count = this.inputs.find( e => e.name == 'count')
+      let length = this.inputs.find( e => e.name == 'length')
+
+      if(!start)
+        this.inputs.push({name: 'start', title: 'Start Number', val: 1})
+
+      if(!count)
+        this.inputs.push({name: 'count', title: 'Barcode Count', val: 10})
+
+      if(!length)
+        this.inputs.push({name: 'length', title: 'Number Length', val: 4})
   },
   props: {
     inputs: Array,
@@ -44,13 +35,17 @@ export default {
   methods:{
     generate: function(){
       let bc = ''
+      let start = this.inputs.find( e => e.name == 'start').val
+      let count = this.inputs.find( e => e.name == 'count').val
+      let length = this.inputs.find( e => e.name == 'length').val
 
       this.inputs.map(i => {
-        bc = bc + i.val
+        if(i.name !== 'start' && i.name !== 'count' && i.name !== 'length')
+          bc = bc + i.val
       })
 
-      for(let i=parseInt(this.start); i<(parseInt(this.start) + parseInt(this.count)); i++){
-        this.barcodes.push(bc + Array(parseInt(this.length)+1-i.toString().length).join('0')+i.toString())
+      for(let i=parseInt(start); i<(parseInt(start) + parseInt(count)); i++){
+        this.barcodes.push(bc + Array(parseInt(length)+1-i.toString().length).join('0')+i.toString())
       }
     }
   }
