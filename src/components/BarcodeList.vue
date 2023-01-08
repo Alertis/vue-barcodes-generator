@@ -1,25 +1,6 @@
 <template>
     <span v-if="data.length > 0">
-        <svg class="barcode" v-for="(b,i) in data" :key="i"
-            :jsbarcode-format="config.format ? config.format : 'auto'"
-            :jsbarcode-value="b"
-            :jsbarcode-fontsize="config.fontSize"
-            :jsbarcode-fontoptions="config.fontOption"
-            :jsbarcode-width="config.width"
-            :jsbarcode-height="config.height"
-            :jsbarcode-displayvalue="config.displayValue"
-            :jsbarcode-text="config.text"
-            :jsbarcode-font="config.font"
-            :jsbarcode-textalign="config.textAlign"
-            :jsbarcode-textposition="config.textPosition"
-            :jsbarcode-textmargin="config.textMargin"
-            :jsbarcode-background="config.background"
-            :jsbarcode-linecolor="config.lineColor"
-            :jsbarcode-margin="config.margin"
-            :jsbarcode-margintop="config.marginTop"
-            :jsbarcode-marginleft="config.marginLeft"
-            :jsbarcode-marginbottom="config.marginBottom"
-            :jsbarcode-marginright="config.marginRight" ></svg>
+        <svg class="barcode" v-for="(b,i) in data" :key="i" v-bind="getProps" :jsbarcode-value="b"></svg>
     </span>
 </template>
 
@@ -34,6 +15,15 @@ export default {
         JsBarcode('.barcode').init()
       }, 1000)
 
+    }
+  },
+  computed:{
+    getProps: function(){
+      let props = []
+      Object.keys(this.config).map(c => {
+        props.push({['jsbarcode-'+c.toLowerCase()]: this.config[c]})
+      })
+      return props
     }
   },
   props: {

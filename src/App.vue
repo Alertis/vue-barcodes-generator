@@ -29,7 +29,7 @@ export default {
         displayValue: false,
         textAlign: 'center',
         textPosition: 'bottom',
-        textMargin: 10,
+        textMargin: 10
       }
     }
   },  
