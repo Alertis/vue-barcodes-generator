@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <BarcodeGenerator  :inputs="inputs"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BarcodeGenerator from './components/App.vue'
 
 export default {
   name: 'App',
+  data: function(){
+    return {
+      inputs: [
+        {name: 'year', title:'Yıl', val: ''},
+        {name: 'month', title:'Ay', val: ''},
+        {name: 'code', title:'Ürün Kodu', val: ''}
+      ]
+    }
+  },  
   components: {
-    HelloWorld
+    BarcodeGenerator
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+x
