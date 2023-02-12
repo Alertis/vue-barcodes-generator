@@ -35,11 +35,6 @@ export default {
   }
 }
 </script>
-<style>
-  .button{
-    padding: .5rem;
-    background-color: red;
-    color: white;
-    border-radius: 5px;
-  }
+<style lang="css" scoped>
+  @import "./assets/css/style.css";
 </style>

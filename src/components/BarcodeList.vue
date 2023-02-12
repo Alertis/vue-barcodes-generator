@@ -33,30 +33,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.input{
-  margin: .5rem;
-  max-width: 200px;
-}
-.forms{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-input{
-  width: 50px
-}
-
-label{
-  font-weight: bold;
-  margin: .5rem;
-}
-
-button{
-  padding: .5rem;
-  background-color: green;
-  color: white;
-  border-radius: 5px;
-}
+<style lang="css" scoped>
+  @import "../assets/css/style.css";
 </style>
