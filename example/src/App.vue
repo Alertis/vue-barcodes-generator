@@ -22,13 +22,17 @@ export default {
       inputs: [
         {name: 'start', title: 'First Barcode No', val: 1},
         {name: 'count', title: 'Barcode Count', val: 10},
-        {name: 'length', title: 'Barcode No Length', val: 2},
+        {name: 'length', title: 'Number Length', val: 2},
       ],
-      buttonText: 'String',
-      buttonClass: String,
+      buttonText: 'Create',
+      buttonClass: 'button',
       barcodeConfig: Object,
-
     }
   }
 }
 </script>
+<style scoped>
+  .button{
+    background-color: red
+  }
+</style>
