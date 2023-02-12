@@ -1,4 +1,5 @@
 # vue-barcodes-generator
+will be update
 
 ## Project setup
 ```
