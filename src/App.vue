@@ -16,11 +16,7 @@ export default {
   name: 'App',
   data: function(){
     return {
-      inputs: [
-        {name: 'year', title:'Yıl', val: ''},
-        {name: 'month', title:'Ay', val: ''},
-        {name: 'code', title:'Ürün Kodu', val: ''}
-      ],
+      inputs: [],
       barcodeConfig: {
         format: 'auto',
         fontSize: 10,
