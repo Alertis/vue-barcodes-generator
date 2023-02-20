@@ -1,6 +1,6 @@
 {
   "name": "vue-barcodes-generator",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "main": "./dist/vue-barcodes-generator.common",
   "files": [  "dist/*",  "src/*",  "public/*",  "*.json",  "*.js"],
