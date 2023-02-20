@@ -4,9 +4,9 @@
 [![npm](https://img.shields.io/npm/dt/vue-barcodes-generator.svg?style=flat-square)](https://www.npmjs.com/package/vue-barcodes-generator)
 [![npm](https://img.shields.io/npm/dm/vue-barcodes-generator.svg?style=flat-square)](https://www.npmjs.com/package/vue-barcodes-generator)
 
-This component creates a form to generate barcodes. This form includes the required 3 inputs (start number, barcode count, barcode number length ) and you can add additional inputs. This form create barcodes with this inputs value when form is sumbitted. 
+This component creates a form to generate barcodes. This form includes the required 3 inputs (start number, barcode count, barcode number length ) and you can add additional inputs. This form creates barcodes with this inputs value when form is sumbitted. 
 
-![](./screenshots/app.png)
+![](https://raw.githubusercontent.com/Alertis/vue-barcodes-generator/main/screenshots/app.png)
 
 
 ## Install
@@ -67,7 +67,7 @@ data: function(){
 |barcodeConfig|Settings for barcode|false|Object|-|
 
 ### Inputs
-This props type is Array and includes a element per form input. It has 3 required element and if you dont pass this element, component generate with default value. You can generate unlimited inputs.
+This props type is Array and includes a element per form input. It has 3 required element and if you dont pass these elements, component generates with default value. You can generate unlimited inputs.
 
 ```javascript 
 [
@@ -97,4 +97,4 @@ If you want edit required 3 elements, you should add element same name (start, c
 
 
 ### barcodeConfig
-This props type is Object and includes settings for generate barcode. This package use  [JsBarcode](https://github.com/lindell/JsBarcode) library for generate barcode and you can inspect to [JsBarcode Documentation](https://github.com/lindell/JsBarcode/wiki/Options) for barcodeConfig props.
+This props type is Object and includes settings for generate barcode. This package uses  [JsBarcode](https://github.com/lindell/JsBarcode) library for generate barcode and you can inspect to [JsBarcode Documentation](https://github.com/lindell/JsBarcode/wiki/Options) for barcodeConfig props.
