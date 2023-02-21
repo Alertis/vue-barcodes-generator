@@ -4,18 +4,22 @@
 [![npm](https://img.shields.io/npm/dt/vue-barcodes-generator.svg?style=flat-square)](https://www.npmjs.com/package/vue-barcodes-generator)
 [![npm](https://img.shields.io/npm/dm/vue-barcodes-generator.svg?style=flat-square)](https://www.npmjs.com/package/vue-barcodes-generator)
 
-This component creates a form to generate barcodes. This form includes the required 3 inputs (start number, barcode count, barcode number length ) and you can add additional inputs. This form creates barcodes with this inputs value when form is sumbitted. 
+This component creates a form to generate barcodes. The form includes three required inputs (start number, barcode count, and barcode number length). Also, you can add some additional inputs to take into account while generating the barcode. After you have specified the related options, you can submit the form to generate barcodes.
 
 ![](https://raw.githubusercontent.com/Alertis/vue-barcodes-generator/main/screenshots/app.png)
 
-
 ## Install
-```
+
+```bash
 npm install vue-barcodes-generator
 ```
 
 ## Usage
-#### 1. Add VueBarcodes as a component
+
+You can use the `vue-barcode-generator` package easily by following the three steps below:
+
+#### 1. Add the `VueBarcodes` as a component
+
 ```javascript
 import VueBarcodes from 'vue-barcodes-generator'
 new Vue({
@@ -24,7 +28,9 @@ new Vue({
   }
 })
 ```
-#### 2. Create the varaibles
+
+#### 2. Specify the barcode options
+
 ```javascript
 data: function(){
     return{
@@ -49,7 +55,9 @@ data: function(){
     }
   }
 ```
-#### 3. Use it
+
+#### 3. Use the `VueBarcodes` component
+
 ```html
   <VueBarcodes 
     :inputs="inputs"
@@ -59,6 +67,7 @@ data: function(){
 ```
 
 ## Props
+
 |Props|Description|Required|Type|Default|
 |-----|-----------|--------|----|-------|
 |inputs|Components use this props for generate form|true|Array|`[{name: 'start', title: 'Start Number', val:1},{name: 'count', title: 'Barcode Count', val: 10}, {name: 'length', title: 'Number Length', val: 4}]`|
@@ -67,7 +76,8 @@ data: function(){
 |barcodeConfig|Settings for barcode|false|Object|-|
 
 ### Inputs
-This props type is Array and includes a element per form input. It has 3 required element and if you dont pass these elements, component generates with default value. You can generate unlimited inputs.
+
+This props type is `Array` and includes an element per form input. It has three required property and if you dont pass these elements, the component generates the default value. You can generate unlimited inputs.
 
 ```javascript 
 [
@@ -89,7 +99,7 @@ This props type is Array and includes a element per form input. It has 3 require
 ]
 ```
 
-If you want edit required 3 elements, you should add element same name (start, count, length)
+If you want to edit three required elements, you should add the element with the same name (start, count, length) as below:
 
 <strong> name: </strong> unique name for input <br>
 <strong> title: </strong> caption for input <br>
@@ -97,4 +107,5 @@ If you want edit required 3 elements, you should add element same name (start, c
 
 
 ### barcodeConfig
-This props type is Object and includes settings for generate barcode. This package uses  [JsBarcode](https://github.com/lindell/JsBarcode) library for generate barcode and you can inspect to [JsBarcode Documentation](https://github.com/lindell/JsBarcode/wiki/Options) for barcodeConfig props.
+
+This props type is `Object` and includes settings for generating barcodes. This package uses the [JsBarcode](https://github.com/lindell/JsBarcode) library to generate barcodes and you can inspect to [JsBarcode Documentation](https://github.com/lindell/JsBarcode/wiki/Options) for barcodeConfig props.
